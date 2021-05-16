@@ -3,6 +3,7 @@ layout: single
 title:  "(possibly) revolutionary extruder"
 date:   2021-05-14 15:28:00 +0200
 categories: 3D-print
+tags: extruder delta
 header:
   teaser: "assets/images/extruder-parts.jpg"
 ---
@@ -16,7 +17,7 @@ The main differences with today's conventional extruders are
 - it will not use a hobbed gear to push the filament
 - it is easily swappable with no tools
 - it can be disassembled without tools either
-- it should allow very high filamnt pressure if needed
+- it will allow very high filament pressure if needed
 - have extremely high filament grip
 - almost no backlash to minimize retraction
 - except bearings and one metal part, entirely 3D-printable
