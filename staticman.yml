@@ -78,3 +78,8 @@ comments:
 
   akismet:
     enabled: true
+    author: "name"
+    authorEmail: "email"
+    authorUrl: "url"
+    content: "message"
+    type: "comment"
