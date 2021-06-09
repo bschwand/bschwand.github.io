@@ -17,6 +17,7 @@ In the end, I got everything I wanted working: comments on my blog posts, akisme
 
 As reference:
 
+- <https://www.mrumpler.at/comments-with-staticman/>
 - <https://knightcodes.com/miscellaneous/2016/09/13/fix-github-metadata-error.html>
 - <https://github.com/mmistakes/minimal-mistakes/issues/1544>
 - <https://www.mrumpler.at/comments-with-staticman/>
