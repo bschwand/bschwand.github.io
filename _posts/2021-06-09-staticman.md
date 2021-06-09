@@ -13,7 +13,7 @@ I thought enabling staticman would be really easy... unfortunately, not so. As s
 
 Anyway, it was quite a journey to get staticman working between RSA certificates, multiple accounts, extra git repositories, and layer after layer of configuration all over the place. Seems that anyone who creates a blog with Jekyll painfully gives birth to a gigantic blog post about it, so I am not going to repeat this. However, for your edification and to be able to refresh my failing memory, I will link to all the posts and web pages which helped me get this working. Although there is still one piece that is not working: the github webhook. Whenever the webhook is invoked by github when a PR is created, the staticman service croaks with an error. Too bad, I just disabled this in the end as everything else is working ok. I still get the email notifications so I really do not care about the webhook.
 
-In the end, I got everything I wanted working: comments on my blog posts, akismet for anti-spam
+In the end, I got everything I wanted working: comments on my blog posts, akismet for anti-spam, and google analytics (to know if anyone is reading...)
 
 As reference:
 
@@ -25,3 +25,4 @@ As reference:
 - <https://spinningnumbers.org/a/staticman-heroku.html#webhook>
 - <https://github.com/eduardoboucas/staticman/issues/389>
 - <https://github.com/eduardoboucas/staticman/issues/83>
+- <https://github.com/mmistakes/minimal-mistakes/issues/1674#issuecomment-511945391>
