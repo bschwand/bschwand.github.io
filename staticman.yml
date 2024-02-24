@@ -83,3 +83,11 @@ comments:
     authorUrl: "url"
     content: "message"
     type: "comment"
+
+  githubAuth:
+    clientId: Iv1.f8161f3937041840
+    clientSecret: 7cc48eee1105c655337e4affda50726457e4ebea
+
+  auth:
+    required: true
+    
