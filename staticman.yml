@@ -43,7 +43,7 @@ comments:
   moderation: true
 
   # Name of the site. Used in notification emails.
-  name: "bschwand.github.io"
+  name: "blog.tinkerbox.org"
 
   # Notification settings. When enabled, users can choose to receive notifications
   # via email when someone adds a reply or a new comment. This requires an account
@@ -77,10 +77,14 @@ comments:
     email: md5
 
   akismet:
-    enabled: true
+    enabled: false
     author: "name"
     authorEmail: "email"
     authorUrl: "url"
     content: "message"
     type: "comment"
 
+  reCaptcha:
+    enabled: true
+    siteKey: "6Ldkh4ApAAAAAO5YGiaL_Sbr-bQt-sBPrE8t7eaf"
+    secret: "e9CwSqTqlHL67n/gzBN77AfdIOuNwRlFWDKlv6wEIpioEiUDuz3d/YAU1ES9y2BYNW6DKrNVnvffB/6S/QE8qeLBT0pf7KBgwbJUAjA2/NyeR1FHbxS3iTW+ldxQ/KRPnlDhKMQKpn8ZXltqnto1zSvnbEYF3ClJk6EWTgzvWF5H5N12p4nXRPxq7OUAvphxZPeSedoXDAJt9coxlEcRj5qBo0Nwx0IhQL/xsBndHCNVOdAtoSTXtdSmpMdKYu/wvJKXvq7ppzLDG9Wfko9GgCFH/uKpXDoYCR3Nh0Kg4FxgcvA4R3/VhI2mud+TYO6SJpYPMZ0EPm9cOWUU8yT/vrp5dQBzsr+1Dz2PkZ2JSe2ZrrkNUQ6AqhQG4Qivn6cO2EexfxIrK2Cfb3hHtRE+sPQNKmZPOy8Yot561Q3jdfvMbu/3+KtqpF/qePqUf3TToxMfrK4B+lxH95gKGQrOIjfCRURv9SKRxhK7ZYfM34iGrAsMn7KKfoS2+bdePDn3E6oLEhCGu/kwcvSuuWRCDHRl1htojnR1SvafymQGFH7NJJnv97hyUFxc9cmrlJVS2pqeW7C2dZj8+bflZtvo9CknyDy4zUP4fQxKpxd1A9HcteQYmL+v4UCWewosNcRSghHBAH4V7QcydqQxa0fKD8YPgwhPj0GQaih8KLlBHzQ="
