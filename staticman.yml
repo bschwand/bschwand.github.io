@@ -83,3 +83,7 @@ comments:
     authorUrl: "url"
     content: "message"
     type: "comment"
+
+  reCaptcha:
+    siteKey: "6Ldkh4ApAAAAAO5YGiaL_Sbr-bQt-sBPrE8t7eaf"
+    secret: "g7fnYOOdt3xeb9+8iXvZSC5rwf6V75cuEyOGlP4dop1y11Dd6ZQoKarggTAlFJVyo1hFE4nLG5R0YSO6y5UrKPO7dTvWb8kKdvOySJBQzlO/in1mgC4I7kAkElvSfLIHdZ4cdCMpf/qCw9SbrRtsFASUo5LFyv7Kod1JPeBPzWKhLl3s9f0Pv5hoyl87mMc166UsoxUNZv5pFab3zxZtWJSSdZuNgj457dcBvHC1voGPF/EET6+esZ4D6NRasMfJAff2V9iFrB7K0d05kREfBlAlFoBGUatf3par51XG8OWMfjyc/C1eD2hHymj/dDQv75O7brh9jGfNfxnnmdLztHXujaeIkEOMniylzLaPNMmQk2fx8V4vnYpHkJPZ1SoVmhdxpQe+1W1GWx3/N/zPcvC4rPb0rQyAgXB6bu6Be+fTKo9gqlpxg+GCoWPDJRRTAYgHkXahVGQymXeuCmRHHXtp+OzW4kPBHdjo1YQe70WFZvD+iAZpM8ZvJ15TPmiPEyEa+Cdvr0vQn41SjsItU2W589qdxjrZwuX76v0v+bDTvnKyqIwekXrbzkjFgrk5LeuFzE13YMshd+lqlA6wC16lnL3ddWPou7WohG0sz8r6VFK4rBqKIRH1OfGRkUUHNRHEb21qKx6E89PKJT8df9nSvDz/3xzai6tXhhU2wlA="
