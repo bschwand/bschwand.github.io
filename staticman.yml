@@ -77,7 +77,7 @@ comments:
     email: md5
 
   akismet:
-    enabled: false
+    enabled: true
     author: "name"
     authorEmail: "email"
     authorUrl: "url"
