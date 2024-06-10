@@ -5,7 +5,7 @@ date:   2024-06-03 11:28:00 +0200
 categories: PC
 tags: PC BIOS ME
 header:
-  teaser: "assets/images/IMG_20240610_220019.jpg"
+  teaser: "assets/images/IMG_20240521_133716.jpg"
 ---
 I recovered an asus laptop for free (Asus n550JK). After adding an SSD and maxing the RAM, it makes for a very usable Laptop. Not a speed demon, but with the integrated Nvidia m850 GPU, it is perfectly capable of running a few games quite well.
 
@@ -28,7 +28,7 @@ Eventually I threw my arms in the air and decided to desolder the damn chip to m
 
 And here it is, just some copper sheet cut and rolled around my soldering iron tip
 
-![desoldering tip](/assets/images/IMG_20240521_133716.jpg)
+![desoldering tip](/assets/images/IMG_20240610_220019.jpg)
 
 Thanks to this, desoldering took 2 seconds. And then, finally the bios images extracted were valid !
 
