@@ -15,7 +15,7 @@ The original probe is a little microswitch on a L-shaped stand, which magnetical
 
 - manual install. Sometimes you forget something. like to uninstall the probe and print, which causes a head crash. messing all the calibration and breaking things...
 - not very precise, it wobbles a tiny bit on the head
-- since it moves, the Z-probe offset has to be periodically adjusted, which is long et tedious
+- since it moves, the Z-probe offset has to be periodically adjusted, which is long and tedious
 - a microswitch is not the most repeatable contact sensor.
 
 All these are really a pain and a waste of time, specially for a remote-operated printer where I have to run down to the garage to baby-sit any Z probe or calibration procedure.
