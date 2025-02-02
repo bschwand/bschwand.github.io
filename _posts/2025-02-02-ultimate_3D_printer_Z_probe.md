@@ -151,6 +151,8 @@ The printer firmware needs updating, in my case I use Marlin on a trigorilla 1.4
 - #define PROBE_ENABLE_DISABLE
 - #define PROBE_ENABLE_PIN 43
 
+Oh, fun thing about that pin 43: initially my arduino was not being enabled by Marlin when initiating a probe action. Eventually I figured that on the trigorilla 1.4 board I have, the extra pins 42 and 43 are labelled wrong on the board silkscreen. They are reversed. Ah those chinese...
+
 # Conclusion
 
 This works really really well. It is fast. When the nozzle touches the bed during a probe move, the controller triggers as soon as it sees a 40g equivalent on the bed (can be configured of course) but by the time marlin processes the input, the pressure on bed is 200g already. The probe and all is much faster than the physical moves of the printer head. Still, it does not move the bed at all. The small 0.5mm relief for the strain fingers is never bottomed out in normal operation there is no visible flex at all. It actually takes more than 5Kg on the print bed to really compress that relief space, so there is quite a margin, it's not like the print bed is bouncing or moving around, it is rock solid. I was afraid the underside of the printbed would heat as now the whole heater is enclosed, but actually the bottom aluminum plate stays cold even after many hours print jobs. The insulating neoprene and foil work really well.
