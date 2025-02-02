@@ -33,16 +33,16 @@ So I set to create the ultimate 3D printer Z-probe (for me) with the following c
 - must be cheap in materials
 - must be easy to install
 
-The first deduction from these criterias is that the sensing mechanism will have to be located in the printer bed. A common way to do that is by using the printbed and nozzle themselves a elements of a switch. When the nozzle makes contact with the bed, it closes a circuit that signals contact. I do not like that because the whole machine becomes part of a circuit, which can cause a whole lot of various problems with leaks, bad contacts andmore. Further, it would not work for me as I long ago replaced the original Aluminum bed with a glass bed, which is non-conductive obviously. Using capacitance might be possible, but I suspect it would easily be affected by object on or around the print bed.
+The first deduction from these criterias is that the sensing mechanism will have to be located in the printer bed. A common way to do that is by using the printbed and nozzle themselves as elements of a switch. When the nozzle makes contact with the bed, it closes a circuit that signals contact. I do not like that because the whole machine becomes part of a circuit, which can cause a whole lot of various problems with leaks, bad contacts and more. Further, it would not work for me as I long ago replaced the original aluminum bed with a glass bed, which is non-conductive obviously. Using capacitance might be possible, but I suspect it would easily be affected by objects on or around the print bed.
 
-A mechanical switch under the bed is unacceptable, as it implies the bed has to move a bit, thus a locking/unlocking mechanism would be required. Pressure sensor such as resistive sensor are kind of expensive, and piezo sensor require high voltages and uncommon electronic interfaces. What is (realistically) left: strain gauges, which seem pretty ideal to me
+A mechanical switch under the bed: unacceptable, as it implies the bed has to move a bit, thus a locking/unlocking mechanism would be required. Pressure sensors such as resistive sensors are kind of expensive, and piezo sensors require high voltages and uncommon electronic interfaces. What is (realistically) left: strain gauges, which seem pretty ideal to me
 
 - no deformation (or so small it does not matter)
 - very sensitive (in the 1/10000 of newton range)
 - readily available and cheap
 - amplifier and interface circuit are well known, documented and very cheap.
 
-The idea would be to transform the old aluminum plat printbed into a custom strain sensing platform.
+The idea would be to transform the old aluminum printbed into a custom strain sensing platform and apply it to the back of the glass printbed.
 
 # First tests
 
