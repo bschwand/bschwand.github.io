@@ -126,6 +126,8 @@ In my case, since I have 6 tabs holding the print bed, I will need 6x2 = 12 stra
 
 Finally there is one last trick: a strain sensor that operates in tension, can be used as a compression sensor on the same surface under tension if it is rotated 90 degrees. Think about it, when you pull on a rubber band, that rubber band narrows as it is stretched. So, we can install pairs of strain sensors all on the same side of the gauge being strained (flexed), no need to use both sides or make holes for passing wires !
 
+# Now for the real stuff...
+
 Here is a representation of the wiring, on the plate, with flex fingers cutout. Notice the strain gauges are marked "C" and "S" for compression and stretch respectively.
 
 ![wiring layout](/assets/images/ultimate_Z_probe/IMG_20250105_143608.jpg)
