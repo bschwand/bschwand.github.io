@@ -167,6 +167,8 @@ Many lessons learned here. For my next build I will use a different wiring syste
 
 Also, I should stop trying to make quick veroboard circuits except for the very simplest ones. I always end up spending as much time as if I had designed it properly in kicad and etched it. Which BTW is soon going to be even faster once I finish my UV laser printer to directly expose PCBs. Hopefully soon a new blog entry about that project!
 
+Update: here is a quick demonstration of the Z-Probing. If you wonder what the strange wrinkly black thing is, read my [remote hotend fan, part one](/3d-print/PWM_to_0-5VDC/) and [part two](/3d-print/remote_hotend_fan/)
+{% include video id="b32DKuH9-Ho" provider="youtube" %}
 
 
 
