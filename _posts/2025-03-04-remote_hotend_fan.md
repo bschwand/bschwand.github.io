@@ -24,8 +24,7 @@ Here is what I tried:
 
 - I made some kind of mesh-like structure by cutting plastic sheet and rolling it up (similar to expanded steel mesh). That was not rigid enough and also was very bad for aiflow. I could not affix the fabric properly either.
 
-I think ideally, some highly flexible mesh could work but it would need a variable diameter and maybe highly rigid and flexible material, like carbon fiber. I have an idea of printing directly such mesh on a mandrel (cylinder or cone) but to do that I would need an additional rotating axis on my 3D printer.
-Another idea is to print a mandrel with guides for a string, then essentially knitting carbon fiber on it and wetting it with epoxy, 
+I think ideally, some highly flexible mesh could work but it would need a variable diameter and maybe highly rigid and flexible material, like carbon fiber. I have an idea of printing a mandrel then essentially knitting carbon fiber on it and wetting it with epoxy, but to do that I would need an additional rotating axis on my 3D printer.
 
 In the end, I made a kind of elastic "sock", by sewing elastic thread on the fabric.
 

@@ -13,7 +13,7 @@ I really got tired of the Anycubic Kossel Z probe.
 
 The original probe is a little microswitch on a L-shaped stand, which magnetically attaches to a spot next to the printer nozzle. So you have to place it, and connect the probe wire manually whenever a probe operation is done (to calibrate the delta columns, or probe the bed, etc.). Connecting and disconnecting the cable is difficult as the cables are short and kind of tight. So the first improvement I made was a magnetic connector using pogo pins. This way there is nothing to connect/disconnect. That worked well enough but did not fix all the other issues with such a probe:
 
-- manual install. Sometimes you forget something. like to uninstall the probe and print, which causes a head crash. messing all the calibration and breaking things...
+- manual install. Sometimes you forget something. Like, to uninstall the probe and print, which causes a head crash. messing all the calibration and breaking things...
 - not very precise, it wobbles a tiny bit on the head
 - since it moves, the Z-probe offset has to be periodically adjusted, which is long and tedious
 - a microswitch is not the most repeatable contact sensor.
@@ -33,7 +33,9 @@ So I set to create the ultimate 3D printer Z-probe (for me) with the following c
 - must be cheap in materials
 - must be easy to install
 
-The first deduction from these criterias is that the sensing mechanism will have to be located in the printer bed. A common way to do that is by using the printbed and nozzle themselves as elements of a switch. When the nozzle makes contact with the bed, it closes a circuit that signals contact. I do not like that because the whole machine becomes part of a circuit, which can cause a whole lot of various problems with leaks, bad contacts and more. Further, it would not work for me as I long ago replaced the original aluminum bed with a glass bed, which is non-conductive obviously. Using capacitance might be possible, but I suspect it would easily be affected by objects on or around the print bed.
+The first deduction from these criterias is that the sensing mechanism will have to be located in the printer bed. A common way to do that is by using the printbed and nozzle themselves as elements of a switch. When the nozzle makes contact with the bed, it closes a circuit that signals touchdown.
+
+I do not like that because the whole machine becomes part of a circuit, which can cause a whole lot of various problems with leaks, bad contacts and more. Further, it would not work for me as I long ago replaced the original aluminum bed with a glass bed, which is non-conductive obviously. Using capacitance might be possible, but I suspect it would easily be affected by objects on or around the print bed.
 
 A mechanical switch under the bed: unacceptable, as it implies the bed has to move a bit, thus a locking/unlocking mechanism would be required. Pressure sensors such as resistive sensors are kind of expensive, and piezo sensors require high voltages and uncommon electronic interfaces. What is (realistically) left: strain gauges, which seem pretty ideal to me
 
@@ -46,7 +48,7 @@ The idea would be to transform the old aluminum printbed into a custom strain se
 
 # First tests
 
-To experiment with the strain gauges and interfacing I ordered small gauges (about 30 cent each) and HX711 interface module.
+To experiment with the strain gauges and interfacing I ordered from Aliexpress small gauges (about 30 cent each) and HX711 interface module (70 cents).
 I picked the HX711 module that has the pads to select the update rate, as the default 10Hz rate is a little low and 80Hz will do much better.
 ![HX711 module](/assets/images/ultimate_Z_probe/HX711.png)
 
@@ -58,9 +60,9 @@ Next I made a test load cell on a 4mm thick flat bar of aluminum
 
 ![Test gauge](/assets/images/ultimate_Z_probe/IMG_20250202_123556.jpg)
 
-This taught me that soldering and laying out such thin magnet wire is quite annoying and difficult. It tends to lift, not stay in place, it is very difficult to remove the insulating laquer properly, it is so thin it tends to melt. And it's very easy to overheat the strain sensor and lift the pads while soldering. I later came up with a much better solution.
+This taught me that soldering and laying out such thin magnet wire is quite annoying and difficult. It tends to lift, not stay in place, it is very difficult to remove the insulating laquer properly, it is so thin it tends to melt on the tip of the soldering iron. And it's very easy to overheat the strain sensor and lift the pads while soldering. I later came up with a much better solution.
 
-To drive the HX711, I was going to use an stm8 board but laziness won: there are plenty of arduino libraries to communicate with the HX711, so I used an arduino pro mini clone that I already had as well instead. Since the pro mini has no usb/serial converter, it's great to hook up directly to the serial pins on the OrangePiOne controlling the printer with octoprint. This way the Pi board powers the Arduino, can control/configure it over the serial port, and also program the firmware on it.
+To drive the HX711, I was going to use an stm8 board but laziness won: there are plenty of arduino libraries to communicate with the HX711, so I used an arduino pro mini clone that I already had as well instead. Since the pro mini has no usb/serial converter, it's great to hook up directly to the serial pins on the OrangePiOne controlling the printer with octoprint. This way the octoprint Pi board powers the Arduino, can control/configure it over the serial port, and also program the firmware on it.
 
 I whipped a quick prototype on veroboard
 
@@ -76,7 +78,7 @@ So let's do the real thing !
 
 # Building the strain gauge print bed
 
-My working print bed is a glass plate, under which a 220V silicone heater is glued. I did not like all that power going over 12V from the trigorilla kossel controller board, so I switched to a 220V heater switched with an SSR. This works very well. On top of the heater, there is a 12mm insulating neoprene foam backed with aluminum foil. With this, the plate loses very little heat on the backside. I figured the best way to attach the aluminum strain plate would be to glue it to a spacer glued to the glass plate and heater.
+My working print bed is a glass plate, under which a 220V silicone heater is glued. (I did not like all that power going over 12V from the trigorilla kossel controller board, so I switched to a 220V heater switched with an SSR). This works very well. On top of the heater, there is a 12mm insulating neoprene foam backed with aluminum foil. With this, the plate loses very little heat on the backside. I figured the best way to attach the aluminum strain plate would be to glue it to a spacer glued to the glass plate and heater.
 
 Here I create a wall from transparent plastic sheet I had laying around, to mold the spacer
 
@@ -98,7 +100,7 @@ This gives a very flat and smooth surface, perfectly level with the glass print 
 
 ![cleaned up routed spacer](/assets/images/ultimate_Z_probe/IMG_20250103_154030.jpg)
 
-The printbed is held by six little plastic pieces attached to the printer frame. We want the new print bed strain gauge plate to only rest on those 6 pieces. The actual strain sensors are shaped by cutting out fingers or tabs in the aluminum plate (shown here on a paper sawing guide, the L-shapes are the cuts to make). The scrollsaw with a metal blade made quick work of this. To leave a tiny bit of room (0.5mm) for the fingers to flex under pressure (although imperceptible, they do have to flex) I also routed a small clearance on the epoxy spacer, shown here as hatched zones.
+The printbed is held by six little plastic pieces attached to the printer frame. We want the new print bed strain gauge plate to only rest on those 6 pieces. The actual strain sensors are shaped by cutting out fingers/tabs in the aluminum plate (shown here on a paper sawing guide, the L-shapes are the cuts to make). The scrollsaw with a metal blade made quick work of this. To leave a tiny bit of room (0.5mm) for the fingers to flex under pressure (although imperceptible, they do have to flex) I also routed a small clearance on the epoxy spacer, shown here as hatched zones.
 
 ![finger and clearance](/assets/images/ultimate_Z_probe/IMG_20250103_160248.jpg)
 
@@ -138,11 +140,11 @@ Of course before doing all this wiring, I laid a layer of epoxy to electrically 
 
 ![final wiring](/assets/images/ultimate_Z_probe/IMG_20250106_184005.jpg)
 
-And finally some kapton tape to insulate and protect the tracks, and a a very ghetto-like case for the arduino, made from folded insulating cardboard (well obviously the printer is not able to print anything while I do all these modifications...)
+And finally some kapton tape to insulate and protect the tracks, and a very ghetto-like case for the arduino, made from folded insulating cardboard (well obviously the printer is not able to print anything while I do all these modifications...)
 
 ![final strain gauge print bed](/assets/images/ultimate_Z_probe/IMG_20250109_095012.jpg)
 
-The firmware for the arduino is in [this gihub repository](https://github.com/bschwand/strain-probe), including the HX711 library that I used. I only made a small modification to the lib, by changing the sample number to 2. It's very quick and dirty code but it allows to do everything required. To configure the arduino after flashing it, connect the serial line and configure your terminal emulator to use 57600 b/s. Then hit return and you will be greeted with a list of available one letter commands. First thing to do is to calibrate the sensors so the values are expressed in grams, then set a threshold weight at which the PROBE output is raised.
+The firmware for the arduino is in [this github repository](https://github.com/bschwand/strain-probe), including the HX711 library that I used. I only made a small modification to the lib, by changing the sample number to 2. It's very quick and dirty code but it allows to do everything required. To configure the arduino after flashing it, connect the serial line and configure your terminal emulator to use 57600 b/s. Then hit return and you will be greeted with a list of available one letter commands. First thing to do is to calibrate the sensors so the values are expressed in grams, then set a threshold weight at which the PROBE output is raised.
 
 As described in the source code, the wiring is very simple. There is a probe connection and an enable. Probe events are generated only when enabled, and a tare operation (zeroing the sensors) is automatically done when the probe is enabled.
 
@@ -155,13 +157,15 @@ The printer firmware needs updating, in my case I use Marlin on a trigorilla 1.4
 
 Oh, fun thing about that pin 43: initially my arduino was not being enabled by Marlin when initiating a probe action. Eventually I figured that on the trigorilla 1.4 board I have, the extra pins 42 and 43 are labelled wrong on the board silkscreen. They are reversed. Ah those chinese...
 
+The full Marlin Configuration.h and Configuration_adv.h files are in [this branch of my Marlin fork Marlin](https://github.com/bschwand/Marlin/tree/kossel_linear_plus)
+
 # Conclusion
 
-This works really really well. It is fast. When the nozzle touches the bed during a probe move, the controller triggers as soon as it sees a 40g equivalent on the bed (can be configured of course) but by the time marlin processes the input, the pressure on bed is 200g already. The probe and all is much faster than the physical moves of the printer head. Still, it does not move the bed at all. The small 0.5mm relief for the strain fingers is never bottomed out in normal operation there is no visible flex at all. It actually takes more than 5Kg on the print bed to really compress that relief space, so there is quite a margin, it's not like the print bed is bouncing or moving around, it is rock solid. I was afraid the underside of the printbed would heat as now the whole heater is enclosed, but actually the bottom aluminum plate stays cold even after many hours print jobs. The insulating neoprene and foil work really well.
+This works really really well. It is fast. When the nozzle touches the bed during a probe move, the controller triggers as soon as it sees a 40g equivalent on the bed (can be configured of course) but by the time marlin processes the input, the pressure on the print bed is 200g already. The probe and interface are much faster than the physical moves of the printer head. Still, it does not move the bed at all. The small 0.5mm relief for the strain fingers is never bottomed out. In normal operation there is no visible flex at all. It actually takes more than 5Kg on the print bed to really compress that relief space, so there is quite a margin, it's not like the print bed is bouncing or moving around, it is rock solid. I was afraid the underside of the printbed would heat as now the whole heater is enclosed, but actually the bottom aluminum plate stays cold even after many hours print jobs. The insulating neoprene and foil work really well, all the heat is reflected upwards where we want it.
 
-I think all the requirements I listed are fully met. Calibration is fast and fully automatic, I can change the nozzle or hotend and calibration will run automatically without any special consideration. Marlin UBL leveling using full printbed mapping works really well. I now incorporated a 3 point probe in the preamble g-code generated by Cura, so every print gets proper bed calibration. No matter the temperature or if the printer was moved or something else, prints have perfect first layer everytime and it adds about 45 seconds to the print time.
+I think all the requirements I listed are fully met. Calibration is fast and fully automatic, I can change the nozzle or hotend and calibration will run automatically without any special consideration. Marlin UBL leveling using full printbed mapping works really well. I now incorporated a 3 point probe in the preamble g-code generated by Cura, so every print gets proper bed calibration. No matter the temperature or if the printer was moved or something else, prints have perfect first layer everytime and it adds about 45 seconds to the print time. I used to always have to coat the printbed with glue stick in order to have good adhesion, now I can get away with no glue at all most of the times. Only very specific parts with warp-prone shapes, or highly warping materials still require glue. Standard PLA is just fine without.
 
-Bonus: I can know exactly the mass of a print at the end of a print :-)
+Bonus: I can know exactly the mass of a print once it is finished :-)
 
 Many lessons learned here. For my next build I will use a different wiring system (either some printable ink or direct etching of track). Actually, this whole sensor, wiring and controller could be made on an aluminum PCB, as a single part. The molding process was a bit tedious because the glass bed was entirely covered by the heater. A better sized heater pad, with a small margin free around would have made things a lot easier. The other issue I had was with passing the heater cables through the spacer, that was leaking a bit while molding. Also, at some point I was pulling my hair trying to find why Marlin would go into emergency stop mode immediately when the nozzle touched the bed and triggered. Turns out, if your tower height (for delta) is very wrong (like 10cm off but maybe less), Marlin completely panics when it gets a probe triggered where it thinks the bed should not be. Which kind of makes sense but I was not expecting my Marlin config to be wrong and kept searching for the cause in my strain gauge sensors and firmware...
 
