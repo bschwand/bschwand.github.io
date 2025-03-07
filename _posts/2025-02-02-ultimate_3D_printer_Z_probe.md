@@ -157,7 +157,7 @@ The printer firmware needs updating, in my case I use Marlin on a trigorilla 1.4
 
 Oh, fun thing about that pin 43: initially my arduino was not being enabled by Marlin when initiating a probe action. Eventually I figured that on the trigorilla 1.4 board I have, the extra pins 42 and 43 are labelled wrong on the board silkscreen. They are reversed. Ah those chinese...
 
-The full Marlin Configuration.h and Configuration_adv.h files are in [this branch of my Marlin fork Marlin](https://github.com/bschwand/Marlin/tree/kossel_linear_plus)
+The full Marlin Configuration.h and Configuration_adv.h files are in [this branch of my Marlin fork](https://github.com/bschwand/Marlin/tree/kossel_linear_plus)
 
 # Conclusion
 
