@@ -1,0 +1,7 @@
+_id: e9692110-0665-11f0-8854-419328ad5068
+message: "Hi, thanks for the comment !\r\nI understand your point if you want ultra-high precision using piezo, I think they introduce some issues that strain sensors do not have. \r\nConsider also that all my 12 strain sensors are part of a single wheatstone bridge. There is no sensor mismatch, everything is averaged out. As far as dynamic effects, I have no levers, hinges, spring or cantilevers, everything rests on 4mm thick x25mm wide aluminium fingers, part of a single plate. And the bed itself is glass, thus extremely rigid. \r\nAs far as precision, the strain sensors give me a resolution in the 1/100 gram if desired, but in practice it is a bit noisy and not required to detect contact reliably.\r\nWith that said your work on quantifying the touch height error is interesting, I may try doing that too and see how well (or bad) the strain sensor printed fares."
+name: Bruno
+email: 9a478ed4666616c1294fb159dcdef81b
+url: 'http://blog.tinkerbox.org'
+hidden: ''
+date: '2025-03-21T15:05:23.209Z'
